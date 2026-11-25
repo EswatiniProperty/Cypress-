@@ -1,1 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cypress Basket - A Shade of Flame Grilled | Manzini, Siteki, Piggs Peak</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0f0f0f;color:#fff}
+a{text-decoration:none;color:inherit}
+.top{background:#111;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+.logo{font-weight:900;font-size:22px;color:#FFD700}
+.logo span{color:#FF3B30}
+.top a{background:#25D366;color:#fff;padding:8px 14px;border-radius:20px;font-weight:700;font-size:14px}
+.hero{padding:24px 16px;text-align:center;background:linear-gradient(180deg,#7a0d0d,#111)}
+.hero h1{font-size:36px;line-height:1.1}
+.hero h1 em{color:#FFD700;font-style:normal}
+.hero p{margin:10px 0;color:#ddd}
+.price{background:#FFD700;color:#000;display:inline-block;padding:6px 14px;border-radius:20px;font-weight:900;margin:10px 0}
+.btn{display:block;background:#25D366;padding:14px;border-radius:12px;font-weight:900;text-align:center;margin:10px 0}
+.btn2{display:block;background:#FFD700;color:#000;padding:14px;border-radius:12px;font-weight:900;text-align:center}
+.section{padding:20px 16px}
+.section h2{font-size:22px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:#1e1e1e;border-radius:14px;padding:12px}
+.card img{width:100%;height:110px;object-fit:cover;border-radius:10px;background:#333}
+.card h3{margin:8px 0 4px;font-size:16px}
+.card p{font-size:13px;color:#bbb}
+.card .p{color:#FFD700;font-weight:900;margin:8px 0}
+.card button{width:100%;background:#FFD700;border:0;padding:10px;border-radius:8px;font-weight:800}
+.branch{background:#1e1e1e;border-radius:14px;padding:14px;margin-bottom:12px}
+.branch h3{color:#FFD700}
+.branch p{font-size:14px;color:#ccc;margin:4px 0}
+.branch .row{display:flex;gap:8px;margin-top:10px}
+.branch .row a{flex:1;text-align:center;padding:10px;border-radius:8px;font-weight:700;font-size:14px}
+.call{background:#fff;color:#000}
+.wa{background:#25D366;color:#fff}
+input,select{width:100%;padding:12px;margin:8px 0;border-radius:10px;border:0;background:#222;color:#fff}
+label{font-size:13px;color:#bbb}
+.footer{text-align:center;padding:20px;color:#888;font-size:13px}
+.cart{position:fixed;bottom:0;left:0;right:0;background:#FFD700;color:#000;padding:14px 16px;display:flex;justify-content:space-between;font-weight:900;display:none}
+</style>
+</head>
+<body>
 
+<div class="top">
+  <div class="logo">CYPRESS <span>BASKET</span></div>
+  <a href="https://wa.me/26878330003?text=Hi%20Cypress%20Manzini,%20I%20want%20to%20order">Order Now</a>
+</div>
+
+<div class="hero">
+  <h1>A SHADE OF <em>FLAME GRILLED</em></h1>
+  <p>Fresh. Fast. Flavourful. Manzini | Siteki | Piggs Peak</p>
+  <div class="price">FAMILY COMBO - E570</div>
+  <p>Chicken wings + Pizza + Mega Chips + Drink</p>
+  <a class="btn" href="https://wa.me/26878330003?text=Hi%20Cypress,%20I%20want%20the%20Family%20Combo%20E570">📱 ORDER ON WHATSAPP</a>
+  <a class="btn2" href="#menu">VIEW MENU ↓</a>
+</div>
+
+<div class="section" id="menu">
+  <h2>🔥 Best Sellers</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=600" alt="Ekoneni">
+      <h3>Ekoneni Meal</h3><p>Grilled chicken, pap, salad + sauce</p>
+      <div class="p">E250</div>
+      <button onclick="add('Ekoneni Meal',250)">Add to Order</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600" alt="Mnandi">
+      <h3>Mnandi Meal</h3><p>Burger, chips + soft drink</p>
+      <div class="p">E120</div>
+      <button onclick="add('Mnandi Meal',120)">Add to Order</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600" alt="Pizza">
+      <h3>Double Deluxe Pizza</h3><p>Pepperoni, cheese, herbs</p>
+      <div class="p">E200</div>
+      <button onclick="add('Double Deluxe Pizza',200)">Add to Order</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?w=600" alt="Combo">
+      <h3>Family Combo</h3><p>Wings + Pizza + Mega Chips</p>
+      <div class="p">E570</div>
+      <button onclick="add('Family Combo',570)">Add to Order</button>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="branches">
+  <h2>📍 Our Branches</h2>
+  <div class="branch">
+    <h3>Manzini - Junction Complex</h3>
+    <p>Open: 8am - 9pm | Phone: 7833 0003</p>
+    <div class="row">
+      <a class="call" href="tel:+26878330003">CALL</a>
+      <a class="wa" href="https://wa.me/26878330003">WHATSAPP</a>
+    </div>
+  </div>
+  <div class="branch">
+    <h3>Siteki - Lubombo Mall</h3>
+    <p>Open: 8am - 9pm | Phone: 7608 0976 / 7680 0742</p>
+    <div class="row">
+      <a class="call" href="tel:+26876080976">CALL</a>
+      <a class="wa" href="https://wa.me/26876080976">WHATSAPP</a>
+    </div>
+  </div>
+  <div class="branch">
+    <h3>Piggs Peak - New House Building</h3>
+    <p>Open: 8am - 9pm | Phone: 7650 5939</p>
+    <div class="row">
+      <a class="call" href="tel:+26876505939">CALL</a>
+      <a class="wa" href="https://wa.me/26876505939">WHATSAPP</a>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="birthday">
+  <h2>🎂 Book FREE Birthday Venue</h2>
+  <p style="color:#ccc;font-size:14px">Celebrate at Cypress - Free venue, bring your cake!</p>
+  <label>Your Name</label><input id="name" placeholder="e.g. Sibusiso Dlamini">
+  <label>Phone</label><input id="phone" placeholder="e.g. 76 123 456">
+  <label>Branch</label>
+  <select id="branch"><option>Manzini</option><option>Siteki</option><option>Piggs Peak</option></select>
+  <label>Date</label><input type="date" id="date">
+  <label>Number of Guests</label><input id="guests" placeholder="e.g. 15">
+  <a class="btn" href="#" onclick="book();return false;">BOOK FREE BIRTHDAY VENUE →</a>
+</div>
+
+<div class="footer">
+  Cypress Basket - A Shade of Flame Grilled<br>
+  Follow us on Facebook: Cypress Basket<br>
+  Manzini | Siteki | Piggs Peak, Eswatini
+</div>
+
+<div class="cart" id="cartBar">
+  <span id="cartText">0 items</span>
+  <span onclick="checkout()">Checkout on WhatsApp →</span>
+</div>
+
+<script>
+let cart = [];
+let total = 0;
+function add(name, price){
+  cart.push(name); total += price;
+  let bar = document.getElementById('cartBar');
+  bar.style.display = 'flex';
+  document.getElementById('cartText').innerText = cart.length + ' items - E' + total;
+  alert(name + ' added! Total: E' + total);
+}
+function checkout(){
+  let msg = 'Hi Cypress, I want to order: ' + cart.join(', ') + ' - Total E' + total;
+  window.open('https://wa.me/26878330003?text=' + encodeURIComponent(msg));
+}
+function book(){
+  let n = document.getElementById('name').value;
+  let p = document.getElementById('phone').value;
+  let b = document.getElementById('branch').value;
+  let d = document.getElementById('date').value;
+  let g = document.getElementById('guests').value;
+  if(!n || !p){ alert('Please fill Name + Phone'); return; }
+  let msg = 'Hi Cypress ' + b + ', I want to BOOK FREE BIRTHDAY VENUE. Name: ' + n + ', Phone: ' + p + ', Date: ' + d + ', Guests: ' + g;
+  window.open('https://wa.me/26878330003?text=' + encodeURIComponent(msg));
+}
+</script>
+</body>
+</html>
